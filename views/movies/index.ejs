@@ -2,4 +2,30 @@
 
 <h1> ALLLLLLLLL Movie Form</h1>
 
+<h2> <%= name  %> </h2>
+
+  <ul>
+
+    <%
+
+    movieArr.forEach( function(movie) {
+      console.log(movieArr)
+    %>
+
+    <li>
+      Movie name: <%= movie.name %>
+    <br>
+      Movie year: <%= movie.year %>
+    <br>
+    <br>
+    </li>
+
+
+    <%
+    })
+    %>
+
+  </ul>
+
+
 <% include ../partials/footer.ejs %>

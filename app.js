@@ -3,26 +3,23 @@ var express = require('express')
 // bodyPaser for form
 var bodyParser = require('body-parser')
 var methodOverride = require('method-override')
-
-
+var mongoose = require('mongoose')
 
 var app = express()
 var port = 4000
 
+
+var movie_routes = require('./routes/movies')
+var gameroutes = require('./routes/gameroutes')
+
+
 app.set('view engine', 'ejs')
 
-
-
-var gameroutes = require('./routes/gameroutes')
+mongoose.Promise = global.Promise
+mongoose.connect('mongodb://localhost/blog')
 
 // this is middleware
 app.use('/', gameroutes)
-
-
-
-
-var movie_routes = require('./routes/movies')
-
 
 // bodyPaser form
 app.use(bodyParser.urlencoded( {
@@ -33,7 +30,6 @@ app.use( methodOverride() )
 
 //middleware
 app.use('/movies', movie_routes)
-
 
 
 // this is middleware

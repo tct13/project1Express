@@ -6,15 +6,19 @@
 
   <div class="form-group">
     <label for="name">Movie Name: </label>
-    <input type="text" class="form-control" name="name" id="name" placeholder="Movie Name">
+    <input type="text" class="form-control" name="newmovie[name]" id="name" placeholder="Movie Name">
   </div>
 
   <div class="form-group">
     <label for="year">Movie Year: </label>
-    <input type="text" class="form-control" name="year" id="year" placeholder="Movie Year">
+    <input type="text" class="form-control" name="newmovie[year]" id="year" placeholder="Movie Year">
   </div>
 
+
   <button type="submit" class="btn btn-default" name="button">submit</button>
+
 </form>
+
+
 
 <% include ../partials/footer.ejs %>
